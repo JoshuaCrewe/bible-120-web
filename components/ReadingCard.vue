@@ -32,7 +32,11 @@
 <template>
     <div class="flex mb-8 flex-col">
         <span class="flex">
-            <span class="text-2xl font-normal text-pink-500 pr-4 --border-r-2 --border-pink-500 --mr-4">🕮</span>
+            <span class="text-2xl font-normal text-indigo-500 pr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+            </span>
             <span>
                 <h3 class="">
                     <span class="text-xl font-black">

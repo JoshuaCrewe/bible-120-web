@@ -15,7 +15,7 @@
           <li v-for="day in days">
             <NuxtLink 
               :to="{ name: 'day-id', params: { id: (day + 1).toString().padStart(3, '0') } }"
-              class="block flex justify-start items-end h-24 bg-pink-500 rounded text-white hover:bg-pink-700"
+              class="block flex justify-start items-end h-24 bg-slate-700 rounded text-white hover:bg-indigo-500"
             >
                 <span class="text-3xl font-black p-1">
                     {{ day + 1 }}
