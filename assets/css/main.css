@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer components {
-  .layout {
-    @apply my-8;
-  }
-  .row {
-    @apply flex flex-wrap flex-row max-w-screen-xl px-4 mx-auto w-full;
-  }
+    .layout {
+        @apply my-8;
+    }
+    .row {
+        @apply flex flex-wrap flex-row max-w-screen-xl px-4 mx-auto w-full;
+    }
 }
