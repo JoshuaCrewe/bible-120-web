@@ -9,8 +9,20 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
+
     modules: ['@nuxtjs/color-mode'],
     colorMode: {
         classSuffix: ''
-    }
+    },
+
+    ssr: true,
+    experimental: {
+        payloadExtraction: false
+    },
+    router: {
+        options: {
+            strict: false,
+        }
+    },
+    sourcemap: false,
 })

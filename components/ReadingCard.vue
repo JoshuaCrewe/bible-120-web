@@ -1,7 +1,7 @@
 <script setup>
     const props = defineProps(['index', 'book', 'to', 'from'])
     let verse = [];
-    let urlBook = props.book.replaceAll(' ', '_').replace('1st', '1').replace('2nd', '2');
+    let urlBook = props.book.replaceAll(' ', '_').replace('1st', '1').replace('2nd', '2').replace('3rd', '3');
     let url = `https://bible.helloao.org/api/BSB/${urlBook}/${props.from}.json`;
 
     await fetch(url)
