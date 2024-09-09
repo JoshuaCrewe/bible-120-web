@@ -24,7 +24,13 @@
             <a 
                 href="/pdf/bible-120.pdf" 
                 download 
-                class="p-2 border border-indigo-500 shadow rounded font-bold hover:bg-indigo-500 focus:bg-indigo-500 hover:text-white focus:text-white">
+                class="
+                    p-2 shadow rounded font-bold 
+
+                    bg-slate-700
+                    text-white
+                    hover:focus:bg-indigo-500
+                ">
                 Download PDF
             </a>
         </div>

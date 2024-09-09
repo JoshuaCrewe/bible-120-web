@@ -14,6 +14,15 @@
         },
     });
     const route = useRoute()
+
+    async function setToday() {
+        let startDate = useCookie('startDate')
+        let today = new Date();
+        today.setDate(today.getDate() - (route.params.id - 1));
+        startDate.value = today;
+
+        await navigateTo('/');
+    }
 </script>
 <template>
     <div class="row">
@@ -27,6 +36,20 @@
 
         <div class="w-full md:w-1/2 mx-auto mt-16">
             <ReadingList v-bind:index="route.params.id" />
+            <div class="mt-32"></div>
+            <button 
+                @click="setToday" 
+                class="
+                    fixed bottom-4 right-4
+                    p-2 shadow rounded font-bold 
+
+                    bg-slate-700
+                    text-white
+                    hover:bg-indigo-500
+                "
+            >
+                Set as today
+            </button>
         </div>
     </div>
 </template>
