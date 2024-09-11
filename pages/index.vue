@@ -1,7 +1,13 @@
 <script setup>
     import { ToWords } from 'to-words';
 
-    let startDate = useCookie('startDate')
+    let expires = new Date();
+    expires.setDate(expires.getDate() + 120);
+
+    let startDate = useCookie('startDate', {
+        expires
+    })
+
     let today = new Date();
 
     if (!startDate.value) {
