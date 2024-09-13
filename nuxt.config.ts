@@ -1,5 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    app: {
+        head: {
+            charset: 'utf-8',
+            titleTemplate: 'Bible 120',
+            htmlAttrs: {
+                lang: 'en'
+            },
+            meta: [
+                {
+                    name: 'description',
+                    content: 'Read the whole bible in 120 days',
+                }
+            ]
+        }
+
+    },
     compatibilityDate: '2024-04-03',
     devtools: { enabled: false },
     css: ['~/assets/css/main.css'],
