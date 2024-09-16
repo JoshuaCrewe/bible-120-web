@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+let opts: object = {
     app: {
         head: {
             charset: 'utf-8',
@@ -25,12 +25,10 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
-
-    modules: ['@nuxtjs/color-mode'],
+    modules: [],
     colorMode: {
-        classSuffix: ''
+        classSuffix: '',
     },
-
     ssr: true,
     experimental: {
         payloadExtraction: false
@@ -41,4 +39,10 @@ export default defineNuxtConfig({
         }
     },
     sourcemap: false,
-})
+}
+
+// It would be ideal to check that this can be imported by checking if cookies are enabled
+// This doesn't seem super possible at the moment though
+opts.modules.push('@nuxtjs/color-mode');
+
+export default defineNuxtConfig(opts)

@@ -1,25 +1,30 @@
-<script setup>
+<script setup lang="ts">
 import { ToWords } from 'to-words';
 
-let expires = new Date();
-expires.setDate(expires.getDate() + 120);
+let today: string = new Date();
+let day: number = 1;
+let expires: string = new Date();
+let diff: number = 1;
 
-let startDate = useCookie('startDate', {
-    expires
-})
 
-let today = new Date();
+if (navigator.cookieEnabled) {
+    expires.setDate(expires.getDate() + 120);
+    let startDate: string = useCookie('startDate', {
+        expires
+    })
 
-if (!startDate.value) {
-    startDate.value = today;
+    if (startDate && !startDate.value) {
+        startDate.value = today;
+    }
+
+    let diff = Math.ceil(
+        (today.getTime() - new Date(startDate.value).getTime()) /
+        (1000 * 60 * 60 * 24)
+    );
+
+    day = (diff !== 0) ? diff : 1;
 }
 
-let diff = Math.ceil(
-    (today.getTime() - new Date(startDate.value).getTime()) /
-    (1000 * 60 * 60 * 24)
-);
-
-let day = (diff !== 0) ? diff : 1;
 const toWords = new ToWords({
     localeCode: 'en-GB',
     converterOptions: {
