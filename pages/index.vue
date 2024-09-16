@@ -7,23 +7,23 @@ let expires: string = new Date();
 let diff: number = 1;
 
 
-if (navigator.cookieEnabled) {
-    expires.setDate(expires.getDate() + 120);
-    let startDate: string = useCookie('startDate', {
-        expires
-    })
+// if (navigator.cookieEnabled) {
+expires.setDate(expires.getDate() + 120);
+let startDate: string = useCookie('startDate', {
+    expires
+})
 
-    if (startDate && !startDate.value) {
-        startDate.value = today;
-    }
-
-    let diff = Math.ceil(
-        (today.getTime() - new Date(startDate.value).getTime()) /
-        (1000 * 60 * 60 * 24)
-    );
-
-    day = (diff !== 0) ? diff : 1;
+if (startDate && !startDate.value) {
+    startDate.value = today;
 }
+
+diff = Math.ceil(
+    (today.getTime() - new Date(startDate.value).getTime()) /
+    (1000 * 60 * 60 * 24)
+);
+
+day = (diff !== 0) ? diff : 1;
+// }
 
 const toWords = new ToWords({
     localeCode: 'en-GB',
