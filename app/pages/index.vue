@@ -35,7 +35,7 @@ const toWords = new ToWords({
 <template>
   <div class="row">
     <div class="w-full text-center mt-8">
-      <h1 class="text-4xl mt-2 font-black">Day {{ toWords.convert(day) }}</h1>
+      <h1 class="text-4xl font-black">Day {{ toWords.convert(day) }}</h1>
       <p class="text-xl">
         <!-- 
                 This is repeated three times as doing it all in one go surfaced a hydration problem
