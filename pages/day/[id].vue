@@ -24,6 +24,7 @@ async function setToday() {
     let today = new Date();
     today.setDate(today.getDate() - (route.params.id - 1));
     startDate.value = today;
+  today.setHours(0, 0, 0, 0);
 
     await navigateTo('/');
 }

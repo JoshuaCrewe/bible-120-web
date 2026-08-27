@@ -6,6 +6,7 @@ let day: number = 1;
 let expires: string = new Date();
 let diff: number = 1;
 
+today.setHours(0, 0, 0, 0);
 
 // if (navigator.cookieEnabled) {
 expires.setDate(expires.getDate() + 120);
