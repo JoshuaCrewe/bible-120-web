@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^4.0.1",
+    "@vite-pwa/nuxt": "^1.1.1",
     "autoprefixer": "^10.5.4",
     "husky": "^9.1.7",
     "nuxt": "^4.5.2",
