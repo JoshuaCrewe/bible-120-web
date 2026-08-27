@@ -22,7 +22,7 @@ diff = Math.ceil(
     (1000 * 60 * 60 * 24),
 );
 
-day = diff !== 0 ? diff : 1;
+day = diff + 1;
 // }
 
 const toWords = new ToWords({
