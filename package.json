@@ -12,17 +12,18 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "nuxt": "^3.12.4",
-    "to-words": "^4.1.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "to-words": "^6.0.0",
     "vue": "latest",
     "written-number": "^0.11.1"
   },
   "devDependencies": {
-    "@nuxtjs/color-mode": "^3.4.4",
-    "autoprefixer": "^10.4.19",
+    "@nuxtjs/color-mode": "^4.0.1",
+    "autoprefixer": "^10.5.4",
     "husky": "^9.1.7",
-    "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.6",
+    "nuxt": "^4.5.2",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.3.11"
   }
