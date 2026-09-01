@@ -1,8 +1,7 @@
 <script setup>
+    import plan from '~/data/plan'
+    import books from '~/data/books'
     const props = defineProps(['index'])
-    const { data: plan } = await useFetch(`/api/plan`);
-
-    const { data: books } = await useFetch(`/api/books`);
 </script>
 
 <template>

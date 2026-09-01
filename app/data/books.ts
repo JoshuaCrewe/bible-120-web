@@ -1,5 +1,4 @@
-export default defineEventHandler((event) => {
-    return [
+export default [
         "Genesis",
         "Exodus",
         "Leviticus",
@@ -67,5 +66,3 @@ export default defineEventHandler((event) => {
         "Jude",
         "Revelation"
     ]
-
-})

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       titleTemplate: "Bible 120",
+      viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
       htmlAttrs: {
         lang: "en",
       },
@@ -62,7 +63,7 @@ export default defineNuxtConfig({
       globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
     },
   },
-  ssr: true,
+  ssr: process.env.isNativeApp !== "true",
   experimental: {
     payloadExtraction: false,
   },
