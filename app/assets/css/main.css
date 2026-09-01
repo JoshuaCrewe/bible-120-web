@@ -2,6 +2,19 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Edge-to-edge: html background paints through the transparent status/nav bars,
+   so they match the theme. Body padding keeps content out of the safe areas. */
+html {
+  background-color: #ffffff;
+}
+html.dark {
+  background-color: #1e293b; /* slate-800 */
+}
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 @layer components {
   .layout {
     @apply my-8;

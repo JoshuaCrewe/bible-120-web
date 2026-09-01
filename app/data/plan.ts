@@ -1,5 +1,4 @@
-export default defineEventHandler((event) => {
-    return [
+export default [
         {
             "id": "001",
             "sections": [
@@ -2230,4 +2229,3 @@ export default defineEventHandler((event) => {
             ]
         }
     ]
-})

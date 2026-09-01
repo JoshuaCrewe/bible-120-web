@@ -7,17 +7,25 @@
     "typecheck": "nuxt typecheck",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "build:android": "isNativeApp=true nuxt generate && capacitor-assets generate --android && cap sync android",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "prepare": "husky"
   },
   "dependencies": {
+    "@capacitor-community/safe-area": "^8.0.1",
+    "@capacitor/android": "^8.5.1",
+    "@capacitor/core": "^8.5.1",
+    "@capacitor/splash-screen": "^8.0.2",
     "@tailwindcss/vite": "^4.3.3",
+    "sharp": "^0.35.4",
     "to-words": "^6.0.0",
     "vue": "latest",
     "written-number": "^0.11.1"
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.1",
     "@nuxtjs/color-mode": "^4.0.1",
     "@vite-pwa/nuxt": "^1.1.1",
     "autoprefixer": "^10.5.4",
@@ -27,5 +35,9 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.3.11"
+  },
+  "allowScripts": {
+    "sharp@0.32.6": true,
+    "sharp@0.35.4": true
   }
 }
