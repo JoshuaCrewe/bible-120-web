@@ -63,7 +63,7 @@ export default defineNuxtConfig({
       globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
     },
   },
-  ssr: process.env.isNativeApp !== "true",
+  ssr: false,
   experimental: {
     payloadExtraction: false,
   },
