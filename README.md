@@ -1,75 +1,80 @@
-# Nuxt 3 Minimal Starter
+# Bible 120
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Bible 120 is a reading plan that takes you through the whole Bible in 120 days.
 
-## Setup
+Each day the app shows you the passages to read for that day. When you start, it
+remembers your start date, so every time you open it you see what is next up to
+read. The idea is to not worry too much about catching up but instead just read.
+If you do miss a day you can pick any day to set it as today and carry on from
+there. The plan came from a spreadsheet, and the full plan is also available as
+a [PDF](public/pdf/bible-120.pdf).
 
-Make sure to install the dependencies:
+## Install it
+
+**As a web app (PWA):** the site is a Progressive Web App. Open it in your
+browser and use "Add to Home Screen" / "Install app" to keep it on your device.
+
+**As a native Android app:** download the latest `app-debug.apk` from the
+[Releases](../../releases) page and sideload it. (The APK is signed with a debug
+key, so you may need to allow installs from unknown sources.)
+
+## How it works
+
+- Built with [Nuxt](https://nuxt.com) as a static single-page app (`ssr: false`).
+- Bible passages are fetched at runtime from
+  [helloao.org](https://bible.helloao.org) API. The reading plan and book list
+  are bundled into the app, so no build-time API calls are made.
+- Wrapped for Android with [Capacitor](https://capacitorjs.com), which loads the
+  same static site in a native WebView.
+
+## Develop
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm run dev        # http://localhost:3000
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Build
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+npm run generate   # static site -> .output/public
 ```
 
-## Production
+## Make a new Android release
 
-Build the application for production:
+1. Build the web assets, generate the app icon/splash, and sync into the Android
+   project:
+
+   ```bash
+   npm run build:android
+   ```
+
+2. Build the debug APK. The Android Gradle Plugin needs JDK 17 or 21 (not 24+),
+   so point it at Android Studio's bundled JBR:
+
+   ```bash
+   cd android
+   JAVA_HOME=/opt/android-studio/jbr ./gradlew assembleDebug
+   ```
+
+   The APK is written to
+   `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+3. Publish it as a release (tag + attached APK). See
+   [`fj`](https://codeberg.org/forgejo-contrib/forgejo-cli) or the web UI:
+
+   ```bash
+   fj release create --tag v0.1.0 \
+     --attach android/app/build/outputs/apk/debug/app-debug.apk
+   ```
+
+## Icon and splash assets
+
+Source images live in `assets/` (`icon.png`, `splash.png`, `splash-dark.png`).
+`npm run build:android` regenerates every Android density from them via
+`@capacitor/assets`. If a fresh `npm install` breaks asset generation with a
+`sharp` error, remove the nested copy and rerun:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+rm -rf node_modules/@capacitor/assets/node_modules/sharp
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
