@@ -615,7 +615,7 @@ export default [
             "sections": [
                 {
                     "book": 5,
-                    "chapters": [32, 24]
+                    "chapters": [32, 34]
                 },
                 {
                     "book": 6,
